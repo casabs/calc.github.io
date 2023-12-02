@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href="D:\2nd Year 2nd Sem\IT0063 LAB\S3_Casabuena\index\external css.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<!-- page header -->
+<h3>Simple Calculator</h3>
+<br><br>
+<!-- Creating table element -->
+<table border="1px solid black">
+
+  <!-- Creating table row for
+the input field.
+-->
+<tr>
+<td colspan="4"><input type="text" id="input"></td>
+</tr>
+
+<!-- Creating row for button 1, 2, 3 and divide button
+here onclick attribute specify javascript function to be invoke
+when clicked on it.
+ -->
+<tr>
+  <td><button onclick="display(1)">1</button></td>
+  <td><button onclick="display(2)">2</button></td>
+  <td><button onclick="display(3)">3</button></td>
+  <td><button onclick="display('/')">/</button></td>
+</tr>
+
+<!-- Creating row for button 4, 5, 6 and sunstract button
+here onclick attribute specify javascript function to be invoke
+when clicked on it.
+ -->
+<tr>
+  <td><button onclick="display(4)">4</button></td>
+  <td><button onclick="display(5)">5</button></td>
+  <td><button onclick="display(6)">6</button></td>
+  <td><button onclick="display('-')">-</button></td>
+</tr>
+
+<!-- Creating row for button 7, 8, 9 and add button
+here onclick attribute specify javascript function to be invoke
+when clicked on it.
+ -->
+<tr>
+  <td><button onclick="display(7)">7</button></td>
+  <td><button onclick="display(8)">8</button></td>
+  <td><button onclick="display(9)">9</button></td>
+  <td><button onclick="display('+')">+</button></td>
+</tr>
+
+<!-- Creating row for button decimal(.), 0 , calculate (=) multiply(*) and
+ clear button (C)
+here onclick attribute specify javascript function to be invoke
+when clicked on it.
+ -->
+<tr>
+  <td><button onclick="display('.')">.</button></td>
+  <td><button onclick="display(0)">0</button></td>
+  <td><button onclick="solve()">=</button></td>
+  <td><button onclick="display('*')">*</button></td>
+  <td><button onclick="clearDisplay()">C</button></td>
+</tr>
+</table> <!-- end of table element -->
+
+<!-- Start of Javascrip Script-->
+<script type="text/javascript">
+
+  <!-- Function to display user input-->
+  function display(value) {
+    // Get input element
+    var input = document.getElementById("input");
+    // append value to the previous input.
+    input.value += value;
+  } // end of display() function
+
+  <!-- Function to sovle input expression -->
+  function solve() {
+    // get input element
+   var inputField = document.getElementById("input");
+   // Get value of input element.
+   var input = inputField.value;
+   // solve expression using javascript's built-in
+   // eval() function.
+   var result = eval(input);
+   // update value of input field.
+   inputField.value = result;
+ } // end of solve() function
+  <!-- Function to clear user input. -->
+  function clearDisplay() {
+    // Getting input element
+    var input = document.getElementById("input");
+    // Clear input field value by empty string.
+    input.value = "";
+  } // end of clear() function
+
+</script> <!--End of javascript -->
+
+</body> <!-- end of body element -->
+</html> <!-- end of html element -->
